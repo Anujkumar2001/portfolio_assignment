@@ -3,11 +3,6 @@ import React from "react";
 const Preloader = () => {
   return (
     <div className="preloader">
-      <button className="th-btn preloaderCls link-anim">
-        <span className="text-anime">
-          <span className="text">Cancel Preloader</span>
-        </span>
-      </button>
       <div className="preloader-inner">
         <svg
           xmlns="http://www.w3.org/2000/svg"

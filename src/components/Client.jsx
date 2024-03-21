@@ -18,9 +18,9 @@ const Client = ({ userData }) => {
           </div>
         </div>
         <div className="row gy-4 justify-content-center">
-          {userData.testimonials.map((el) => {
+          {userData.testimonials.map((el, index) => {
             return (
-              <div className="col-lg-3 col-md-4 col-sm-6">
+              <div key={index} className="col-lg-3 col-md-4 col-sm-6">
                 <a href="#" className="client-card">
                   <img src={el.image.url} alt="Image" />
                   <h6 className="client-card-title">{el.name}</h6>

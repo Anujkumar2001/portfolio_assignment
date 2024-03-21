@@ -1,32 +1,46 @@
 import React, { useState, useEffect } from "react";
-import hero_thumb_group1 from "../img/hero/hero_thumb_group1-1.png";
-import hero_thumb_group2 from "../img/hero/hero_thumb_group1-2.png";
-import hero_thumb_group3 from "../img/hero/hero_thumb_group1-3.png";
-import hero1 from "../img/hero/hero_1_1.jpg";
+import { FaPlay } from "react-icons/fa";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+
 import hero_chart1 from "../img/hero/hero_chart1-1.png";
+import { IoCloseSharp } from "react-icons/io5";
 
 const HeroSection = ({ userData }) => {
+  const [modalOpen, setModdalOpen] = useState(false);
   const [count, setCount] = useState(0);
-
+  // if (!userData) {
+  //   return;
+  // }
   const { name, avatar, description, exp_year, title, subTitle } =
     userData?.about;
+  const style = {
+    position: "absolute",
+    width: "80vw",
+    top: "50%",
+    height: "100vh",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    bgcolor: "none",
+    border: "none",
+    outline: "none",
+    boxShadow: 24,
+    overflow: "hidden",
+  };
 
   const count1 = (val) => {
     let interval = setInterval(() => {
-      val++;
+      val = val + 200;
       setCount(val);
       if (val == 2000) {
         clearInterval(interval);
       }
-    }, 0);
+    }, 100);
   };
 
   useEffect(() => {
     count1(0);
   }, []);
-  if (!userData) {
-    return;
-  }
   return (
     <div className="th-hero-wrapper hero-1" id="hero">
       <div className="container">
@@ -58,7 +72,12 @@ const HeroSection = ({ userData }) => {
             <div className="hero-img-1">
               <div className="hero-chart-wrap jump">
                 <h4 className="hero-chart-title">Bar Chart</h4>
-                <img src={hero_chart1} alt="img" />
+                <img
+                  src="https://datavizproject.com/wp-content/uploads/types/Bar-Chart-Vertical.png"
+                  alt="img"
+                  width="180px"
+                  height="154px"
+                />
               </div>
               <div className="hero-video-wrap jump-reverse">
                 <div className="hero-thumb-wrap">
@@ -73,17 +92,80 @@ const HeroSection = ({ userData }) => {
                   </div>
                 </div>
                 <p>{subTitle}</p>
-                <a
-                  href={`https://www.youtube.com/watch?v=${userData.youtube[0].embedId}`}
-                  className="video-text-btn popup-video"
+                <Modal
+                  open={modalOpen}
+                  // onClose={handleClose}
+                  aria-labelledby="modal-modal-title"
+                  aria-describedby="modal-modal-description"
+                  style={{ marginTop: "100px" }}
                 >
-                  <div className="play-btn">
-                    <i className="fas fa-play"></i>
+                  <Box sx={style} className="modalBox">
+                    <div style={{ paddingTop: "50px", height: "80%" }}>
+                      <span
+                        style={{
+                          fontSize: "30px",
+                          color: "white",
+                          position: "absolute",
+                          right: "-0px",
+                          top: "-0px",
+                          backgroundColor: "orange",
+                          padding: "5px",
+                          borderRadius: "50%",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => {
+                          setModdalOpen(false);
+                        }}
+                      >
+                        <IoCloseSharp />
+                      </span>
+                      <iframe
+                        width="560"
+                        height="100%"
+                        src={`https://www.youtube.com/embed/${userData.youtube[0].embedId}`}
+                        frameborder="0"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                  </Box>
+                </Modal>
+
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "20px",
+                  }}
+                >
+                  <div
+                    className="play-btn"
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "16px",
+                      backgroundColor: "orange",
+                      borderRadius: "50%",
+                      color: "white",
+                      textAlign: "center",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => {
+                      setModdalOpen(true);
+                    }}
+                  >
+                    <FaPlay />
                   </div>
-                  <div className="btn-content">
+                  <div
+                    className="btn-content"
+                    style={{
+                      paddingTop: "8px",
+                    }}
+                  >
                     <p className="btn-title">Watch Our Video</p>
                   </div>
-                </a>
+                </div>
               </div>
               <div className="thumb">
                 <img

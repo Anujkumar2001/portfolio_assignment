@@ -25,9 +25,12 @@ const TestimonialSection = ({ userData }) => {
           <div className="col-xl-6">
             <div className="swiper testi-thumb-slider1">
               <div className="swiper-wrapper">
-                {testimonialData?.map((el) => {
+                {testimonialData?.map((el, index) => {
                   return (
-                    <div className="testi-profile_thumb swiper-slide">
+                    <div
+                      key={index}
+                      className="testi-profile_thumb swiper-slide"
+                    >
                       <div className="testi-profile-bg icon-masking">
                         <span
                           data-mask-src="assets/img/testimonial/testi_thumb_bg1_1.png"
@@ -50,9 +53,9 @@ const TestimonialSection = ({ userData }) => {
             <div className="swiper testi-slider1">
               <div className="swiper-wrapper">
                 <div className="swiper-slide">
-                  {testimonialData?.map((el) => {
+                  {testimonialData?.map((el, index) => {
                     return (
-                      <div className="testi-card">
+                      <div key={index} className="testi-card">
                         <div className="quote-icon icon-masking">
                           <span
                             data-mask-src={quote}

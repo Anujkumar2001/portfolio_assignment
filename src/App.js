@@ -4,7 +4,7 @@ import { getUserData } from "./api";
 import HeroSection from "./components/Herosection";
 import AboutUs from "./components/AboutUs";
 import Portfolio from "./components/Portfolio";
-import Preloader from "./components/PreLoader";
+import Preloader from "./components/Preloader";
 import BrandArea from "./components/BrandArea";
 import "./App.css";
 import Client from "./components/Client";
@@ -13,7 +13,6 @@ import TestimonialSection from "./components/Testimonial";
 import WorkProcess from "./components/WorkProcess";
 import Blog from "./components/Blog";
 import Footer from "./components/Footer";
-import Contact from "./components/Contact";
 
 const App = () => {
   const [userData, setUserData] = useState({});
@@ -37,6 +36,7 @@ const App = () => {
   }, []);
   return (
     <div>
+      {!Object.keys(userData).length && <Preloader />}
       <Navbar />
       {Object.keys(userData).length && <HeroSection userData={userData} />}
       {/* <Preloader /> */}

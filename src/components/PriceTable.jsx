@@ -11,7 +11,7 @@ const PriceTable = ({ userData }) => {
         <div className="row gy-4 justify-content-center">
           {userData.services.map((el, index) => {
             return (
-              <div className="col-lg-4 col-md-6">
+              <div key={index} className="col-lg-4 col-md-6">
                 <div
                   className={`price-card ${index % 2 !== 0 ? "active" : ""}`}
                 >
