@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/portfolio_assignment/static/css/main.1e7accf7.css",
+    "main.js": "/portfolio_assignment/static/js/main.27f02286.js",
+    "static/media/process-bg-shape1.png": "/portfolio_assignment/static/media/process-bg-shape1.33050b6968ad3524cee2.png",
+    "static/media/process-icon1-2.svg": "/portfolio_assignment/static/media/process-icon1-2.a105262a879681f25f6ff24e6de3c2eb.svg",
+    "static/media/process-icon1-3.svg": "/portfolio_assignment/static/media/process-icon1-3.83f2939f5f085c2723d66b45ea132c7e.svg",
+    "static/media/footer_bg_1.jpg": "/portfolio_assignment/static/media/footer_bg_1.b615e41f8f97487de37e.jpg",
+    "static/media/brand_1_3.svg": "/portfolio_assignment/static/media/brand_1_3.c4b6d53acbcb65f7b2a784f8422d50a6.svg",
+    "static/media/logo.svg": "/portfolio_assignment/static/media/logo.11c4fc11ebd45e60fd459f62aaabfb76.svg",
+    "static/media/process-icon1-1.svg": "/portfolio_assignment/static/media/process-icon1-1.44dd747755a841f6b914aadca05d1945.svg",
+    "static/media/quote.svg": "/portfolio_assignment/static/media/quote.896fc03e68c947a9d34cf19752492482.svg",
+    "static/media/star-icon.svg": "/portfolio_assignment/static/media/star-icon.94d198761d561e4f09b8a265efa4b6d0.svg",
+    "static/media/brand_1_5.svg": "/portfolio_assignment/static/media/brand_1_5.6e66d72e6a80df1e5f8478cae368baf2.svg",
+    "static/media/brand_1_6.svg": "/portfolio_assignment/static/media/brand_1_6.051912ef9fe32bb142cf66145649e067.svg",
+    "index.html": "/portfolio_assignment/index.html",
+    "static/media/brand_1_4.svg": "/portfolio_assignment/static/media/brand_1_4.22dd6404461662b5cfc6c9aaaa25af9b.svg",
+    "static/media/brand_1_2.svg": "/portfolio_assignment/static/media/brand_1_2.1e6fd18cbbc7419513e47c79e0c216aa.svg",
+    "static/media/brand_1_1.svg": "/portfolio_assignment/static/media/brand_1_1.8b3125decccfbfdff23df09f33ae35db.svg",
+    "static/media/about-bg-mask-1.svg": "/portfolio_assignment/static/media/about-bg-mask-1.c3283eb346989613c339.svg",
+    "main.1e7accf7.css.map": "/portfolio_assignment/static/css/main.1e7accf7.css.map",
+    "main.27f02286.js.map": "/portfolio_assignment/static/js/main.27f02286.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1e7accf7.css",
+    "static/js/main.27f02286.js"
+  ]
+}
