@@ -43,9 +43,7 @@
 html {
   scroll-behavior: smooth;
 }
-input {
-  padding-left: 10px;
-}
+
 header {
   position: fixed;
   top: 0;
