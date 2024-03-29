@@ -3,11 +3,13 @@ import { FaArrowRight } from "react-icons/fa";
 import PortfolioModal from "./PortfolioModal";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-
+import { FaGithub } from "react-icons/fa";
+import { MdOutlineDirectionsRun } from "react-icons/md";
+import { IoMdSearch } from "react-icons/io";
 const Portfolio = ({ userData }) => {
-  const allProjects = userData.projects;
   const [modalOpen, setModdalOpen] = useState(false);
   const [modalData, setModalData] = useState({});
+  const [projectData, setProjectData] = useState(userData.projects);
   const style = {
     position: "absolute",
     width: "100vw",
@@ -22,7 +24,20 @@ const Portfolio = ({ userData }) => {
     overflow: "hidden",
     overflowY: "scroll",
   };
-
+  const handleProjects = (e) => {
+    const techStackBag = [];
+    const b = userData.projects.forEach((el) => {
+      const c = el.techStack.forEach((tech) => {
+        const inputVal = e.target.value;
+        console.log(inputVal.toLowerCase());
+        if (tech.toLowerCase().includes(inputVal)) {
+          techStackBag.push(el);
+        }
+      });
+    });
+    // console.log(b);
+    setProjectData(techStackBag);
+  };
   return (
     <>
       <section
@@ -36,6 +51,33 @@ const Portfolio = ({ userData }) => {
               <div className="title-area">
                 <span className="sub-title">PORTFOLIO</span>
                 <h2 className="sec-title">I proud of the Same works</h2>
+                {/* project search section ---------- */}
+                <span
+                  style={{
+                    border: "1px solid black",
+                    fontSize: "30px",
+                    borderRadius: "50px",
+                    width: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    paddingRight: "10px",
+                  }}
+                >
+                  <input
+                    type="text"
+                    placeholder="Search project with techstack"
+                    style={{
+                      outline: "none",
+                      border: "none",
+                      backgroundColor: "transparent",
+                    }}
+                    onChange={(e) => {
+                      handleProjects(e);
+                    }}
+                  />
+                  <IoMdSearch />
+                </span>
               </div>
             </div>
             <div className="col-auto align-self-end">
@@ -54,23 +96,23 @@ const Portfolio = ({ userData }) => {
           </div>
 
           <div className="portfolio-list-wrap">
-            {allProjects.slice(0, 4)?.map((el, index) => {
+            {projectData?.slice(0, 4)?.map((el, index) => {
               return (
-                <div
-                  className="portfolio-list"
-                  key={index}
-                  onClick={(e) => {
-                    setModdalOpen(true);
-                    setModalData(el);
-                  }}
-                >
+                <div className="portfolio-list" key={index}>
                   <div className="portfolio-card">
                     <div
                       className="portfolio-img img-shine"
                       data-bs-toggle="modal"
                       data-bs-target="#portfolioModal"
                     >
-                      <img src={el.image.url} alt="project image" />
+                      <img
+                        src={el.image.url}
+                        alt="project image"
+                        onClick={(e) => {
+                          setModdalOpen(true);
+                          setModalData(el);
+                        }}
+                      />
                     </div>
                     <div className="portfolio-content">
                       <a
@@ -82,14 +124,13 @@ const Portfolio = ({ userData }) => {
                         <FaArrowRight />
                       </a>
                       <div className="portfolio-details">
-                        <p className="portfolio-subtitle">{el.title}</p>
                         <h3 className="portfolio-title">
                           <a
                             href="#portfolioModal"
                             data-bs-toggle="modal"
                             data-bs-target="#portfolioModal"
                           >
-                            {el.description || "Description"}
+                            {el.title}
                           </a>
                           <p
                             className="portfolio-subtitle"
@@ -107,10 +148,43 @@ const Portfolio = ({ userData }) => {
                               }}
                             >
                               {el.techStack.map((tech, index) => (
-                                <li key={index}>{tech}</li>
+                                <li key={index}>{tech},</li>
                               ))}
                             </ul>
                           </p>
+
+                          <div
+                            style={{
+                              display: "flex",
+                              gap: "40px",
+                            }}
+                          >
+                            <span
+                              style={{
+                                border: "2px solid black",
+                                padding: "10px",
+                                borderRadius: "10px",
+                                fontSize: "17px",
+                                cursor: "pointer",
+                              }}
+                            >
+                              <a href={el.githuburl}>{<FaGithub />} Github</a>
+                            </span>
+                            <span
+                              style={{
+                                border: "2px solid black",
+                                padding: "10px",
+                                borderRadius: "10px",
+                                fontSize: "17px",
+                                cursor: "pointer",
+                              }}
+                            >
+                              <a href={el.liveurl}>
+                                {<MdOutlineDirectionsRun />}
+                              </a>{" "}
+                              Deploy
+                            </span>
+                          </div>
                         </h3>
                       </div>
                     </div>

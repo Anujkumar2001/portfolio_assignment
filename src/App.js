@@ -49,7 +49,7 @@ const App = () => {
         <TestimonialSection userData={userData} />
       )}
       {Object.keys(userData).length && <WorkProcess userData={userData} />}{" "}
-      {Object.keys(userData).length && <Blog userData={userData} />}
+      {/* {Object.keys(userData).length && <Blog userData={userData} />} */}
       {Object.keys(userData).length && <Footer userData={userData} />}
     </div>
   );

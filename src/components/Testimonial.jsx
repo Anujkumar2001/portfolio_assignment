@@ -38,11 +38,6 @@ const TestimonialSection = ({ userData }) => {
                         ></span>
                         <img src={el.image.url} alt="img" />
                       </div>
-                      <img
-                        className="testi-profile"
-                        src={el.image.url}
-                        alt="img"
-                      />
                     </div>
                   );
                 })}
@@ -79,7 +74,7 @@ const TestimonialSection = ({ userData }) => {
             </div>
             {/* click review button --------- */}
             <div style={{ display: "flex", gap: "10px" }}>
-              {userData.testimonials?.map((el, index) => {
+              {userData?.testimonials.map((el, index) => {
                 return (
                   <div className="testi-thumb-wrap" key={index}>
                     <div

@@ -82,24 +82,7 @@ const AboutUs = ({ userData }) => {
                     <span className="text">My Self</span>
                   </span>
                 </button>
-                <button
-                  className={`${isClick2} th-btn link-anim`}
-                  onClick={() => {
-                    setShowCart1(false);
-                    setShowCart2(true);
-                    setShowCart3(false);
-                    setShowCart4(false);
-                    setIsClick2("active");
-                    setIsClick1("");
-                    setIsClick3("");
-                    setIsClick4("");
-                  }}
-                  type="button"
-                >
-                  <span className="text-anime">
-                    <span className="text">Education</span>
-                  </span>
-                </button>
+
                 <button
                   onClick={() => {
                     setShowCart1(false);
@@ -165,50 +148,6 @@ const AboutUs = ({ userData }) => {
                   </div>
                 )}
 
-                {showCart2 ? (
-                  <div className="filter-item cat2">
-                    <div className="about-tab-wrap">
-                      <div className="about-tab-card">
-                        <span className="about-tab-card-subtitle">
-                          (2001-2010)
-                        </span>
-                        <h4 className="about-tab-card-title">
-                          Education Prose
-                        </h4>
-                        <p className="about-tab-card-text">
-                          Stellar Learning Academy
-                        </p>
-                      </div>
-                      <div className="about-tab-card">
-                        <span className="about-tab-card-subtitle">
-                          (2010-2015)
-                        </span>
-                        <h4 className="about-tab-card-title">SEO Specialist</h4>
-                        <p className="about-tab-card-text">Upwork Inc.</p>
-                      </div>
-                      <div className="about-tab-card">
-                        <span className="about-tab-card-subtitle">
-                          (2012-2015)
-                        </span>
-                        <h4 className="about-tab-card-title">
-                          IT Consultation
-                        </h4>
-                        <p className="about-tab-card-text">Envato Inc.</p>
-                      </div>
-                      <div className="about-tab-card">
-                        <span className="about-tab-card-subtitle">
-                          2024 At Present
-                        </span>
-                        <h4 className="about-tab-card-title">
-                          Content Strategist
-                        </h4>
-                        <p className="about-tab-card-text">Freelancer.com</p>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  ""
-                )}
                 {showCart3 ? (
                   <div className="filter-item cat3">
                     <div className="about-tab-wrap">

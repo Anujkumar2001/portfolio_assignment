@@ -8,8 +8,8 @@ import { RiSubtractFill } from "react-icons/ri";
 import { FaChevronDown } from "react-icons/fa6";
 import SmoothScroll from "smooth-scroll";
 import "../style/mobileNav.css";
-import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
 import Contact from "./Contact";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -243,38 +243,12 @@ const Navbar = () => {
                         }}
                       >
                         <FaGreaterThan />
-                        <a href="#blog-sec" style={{ paddingLeft: "0" }}>
-                          BLOG
+                        <a href="#footer" style={{ paddingLeft: "0" }}>
+                          FOOTER
                         </a>
                       </span>
-                      {!toogleBlog ? (
-                        <FaPlus
-                          onClick={() => {
-                            setToogleBlog(true);
-                          }}
-                          style={{ cursor: "pointer" }}
-                        />
-                      ) : (
-                        <RiSubtractFill
-                          onClick={() => {
-                            setToogleBlog(false);
-                          }}
-                          style={{ cursor: "pointer" }}
-                        />
-                      )}
                     </span>
                   </div>
-
-                  {toogleBlog && (
-                    <ul className="sub-menu">
-                      <li>
-                        <a href="blog.html"> Blog </a>
-                      </li>
-                      <li>
-                        <a href="blog-details.html"> Blog Details </a>
-                      </li>
-                    </ul>
-                  )}
                 </li>
                 <li>
                   <a
@@ -372,15 +346,7 @@ const Navbar = () => {
                             </div>
                           </a>
                         </li>
-                        <li>
-                          <a href="#blog-sec">
-                            <div className="link-anim">
-                              <span className="text-anime">
-                                <span className="text">BLOG</span>
-                              </span>
-                            </div>
-                          </a>
-                        </li>
+
                         <li
                           onClick={() => {
                             setModalOpen(true);
@@ -394,6 +360,15 @@ const Navbar = () => {
                             <div className="link-anim">
                               <span className="text-anime">
                                 <span className="text">CONTACT</span>
+                              </span>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#footer">
+                            <div className="link-anim">
+                              <span className="text-anime">
+                                <span className="text">FOOTER</span>
                               </span>
                             </div>
                           </a>

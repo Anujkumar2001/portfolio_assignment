@@ -34,85 +34,17 @@ function PortfolioModal({ setModdalOpen, modalData }) {
                   <div className="row gy-30">
                     <div className="col-xl-7">
                       <p className="mb-20 text-light">
-                        The timeline varies depending on the complexity of the
-                        project. Simple projects may take a few weeks, while
-                        more complex ones could extend to several months.
-                        Timelines are influenced by factors like scope, feedback
-                        iterations, and client responsiveness.
+                        {modalData.description}
                       </p>
-                      <p className="mb-xl-4 mb-0 text-light">
-                        Project timelines vary based on complexity and scope.
-                        Small projects may take a few weeks, while larger ones
-                        could span several months. Timelines are established
-                        during project kickoff. We use a range of
-                        industry-standard tools such as Sketch.
-                      </p>
-                    </div>
-                    <div className="col-xl-5">
-                      <ul className="portfolio-info-list text-light">
-                        <li>
-                          <strong>Service Category:</strong> Rubix Carabil Tower
-                        </li>
-                        <li>
-                          <strong>Clients:</strong> David Malan
-                        </li>
-                        <li>
-                          <strong>Project Date:</strong> 13 June, 2020
-                        </li>
-                        <li>
-                          <strong>Avenue End Date:</strong> 22 July, 2023
-                        </li>
-                        <li>
-                          <strong>Locations:</strong> NewYork - 2546 Firs, USA
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                      {/* tech stack -- */}
 
-                  <div className="row gy-30 gx-40 align-items-center">
-                    <div className="col-xl-6">
-                      <div className="page-img mb-0">
-                        <img
-                          className="w-100"
-                          src={modalData.image.url}
-                          alt="portfolio Image"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-xl-6">
-                      <h4 className="box-title text-white">
-                        Services Benefits:
-                      </h4>
-                      <p className="text-light">
-                        We can do both. We can adhere to existing brand
-                        guidelines, ensuring consistency, or help develop new
-                        ones if a client is looking for a fresh identity. Our
-                        goal is to align the UI/UX design with the brand's
-                        overall strategy product meets the needs.
-                      </p>
-                      <div className="checklist style7">
-                        <ul>
-                          <li className="text-light">
-                            <FontAwesomeIcon icon={faCheckCircle} /> We use the
-                            latest diagnostic equipment
-                          </li>
-                          <li className="text-light">
-                            <FontAwesomeIcon icon={faCheckCircle} /> Automotive
-                            service our clients receive
-                          </li>
-                          <li className="text-light">
-                            <FontAwesomeIcon icon={faCheckCircle} /> We are a
-                            member of Professional Service
-                          </li>
-                          <li className="text-light">
-                            <FontAwesomeIcon icon={faCheckCircle} /> Digital how
-                            will activities impact traditional
-                          </li>
-                          <li className="text-light">
-                            <FontAwesomeIcon icon={faCheckCircle} /> Architect
-                            and technical engineer
-                          </li>
-                        </ul>
+                      <div style={{ display: "flex", gap: "10px" }}>
+                        <h1 style={{ color: "white", fontSize: "20px" }}>
+                          Tech Stack :-
+                        </h1>
+                        {modalData.techStack.map((el) => {
+                          return <h2 style={{ color: "white" }}>{el},</h2>;
+                        })}
                       </div>
                     </div>
                   </div>

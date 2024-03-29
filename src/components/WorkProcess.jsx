@@ -27,8 +27,7 @@ const WorkProcess = () => {
                   </div>
                   <h3 className="box-title">Knowledge</h3>
                   <p className="box-text">
-                    The timeline for SEO results can vary, but generally, it
-                    takes a few months
+                    Continuous learning, mastering diverse technologies.
                   </p>
                 </div>
               </div>
@@ -41,8 +40,8 @@ const WorkProcess = () => {
                   </div>
                   <h3 className="box-title">Working</h3>
                   <p className="box-text">
-                    The timeline for SEO results can vary, but generally, it
-                    takes a few months
+                    Practical expertise, efficient collaboration, timely project
+                    delivery.
                   </p>
                 </div>
               </div>
@@ -55,8 +54,8 @@ const WorkProcess = () => {
                   </div>
                   <h3 className="box-title">Solution</h3>
                   <p className="box-text">
-                    The timeline for SEO results can vary, but generally, it
-                    takes a few months
+                    Problem-solving prowess, real-world projects, impactful
+                    outcomes.
                   </p>
                 </div>
               </div>

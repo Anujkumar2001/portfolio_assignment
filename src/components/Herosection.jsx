@@ -2,16 +2,12 @@ import React, { useState, useEffect } from "react";
 import { FaPlay } from "react-icons/fa";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-
-import hero_chart1 from "../img/hero/hero_chart1-1.png";
 import { IoCloseSharp } from "react-icons/io5";
 
 const HeroSection = ({ userData }) => {
   const [modalOpen, setModdalOpen] = useState(false);
   const [count, setCount] = useState(0);
-  // if (!userData) {
-  //   return;
-  // }
+
   const { name, avatar, description, exp_year, title, subTitle } =
     userData?.about;
   const style = {
@@ -42,7 +38,11 @@ const HeroSection = ({ userData }) => {
     count1(0);
   }, []);
   return (
-    <div className="th-hero-wrapper hero-1" id="hero">
+    <div
+      className="th-hero-wrapper hero-1"
+      id="hero"
+      style={{ paddingTop: "40px 0" }}
+    >
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-12">
@@ -70,7 +70,9 @@ const HeroSection = ({ userData }) => {
           </div>
           <div className="col-lg-12 text-center">
             <div className="hero-img-1">
-              <div className="hero-chart-wrap jump">
+              {/* bar chart ------ */}
+              {/* ----------------------- */}
+              {/* <div className="hero-chart-wrap jump">
                 <h4 className="hero-chart-title">Bar Chart</h4>
                 <img
                   src="https://datavizproject.com/wp-content/uploads/types/Bar-Chart-Vertical.png"
@@ -78,7 +80,7 @@ const HeroSection = ({ userData }) => {
                   width="180px"
                   height="154px"
                 />
-              </div>
+              </div> */}
               <div className="hero-video-wrap jump-reverse">
                 <div className="hero-thumb-wrap">
                   <div className="hero-thumb-group">
@@ -166,13 +168,21 @@ const HeroSection = ({ userData }) => {
                     <p className="btn-title">Watch Our Video</p>
                   </div>
                 </div>
-              </div>
-              <div className="thumb">
+              </div>{" "}
+              <div
+                className="thumb"
+                style={{
+                  maxHeight: "580px",
+                  maxWidth: "502px",
+                  margin: "auto",
+                  overflow: "hidden",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
                 <img
-                  style={{
-                    maxWidth: "442px",
-                    maxHeight: "528px",
-                  }}
+                  style={{ objectFit: "cover", height: "100%", width: "100%" }}
                   src={avatar.url}
                   alt="shape"
                 />
@@ -180,7 +190,7 @@ const HeroSection = ({ userData }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div>{" "}
       <div className="hero-social-link">
         <div className="th-social">
           <a href="https://www.facebook.com/">

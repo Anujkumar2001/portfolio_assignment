@@ -15,6 +15,25 @@ function Contact({ setModalOpen }) {
         paddingTop: "40px",
       }}
     >
+      <span
+        style={{
+          color: "white",
+          position: "absolute",
+          top: "20px",
+          right: "30px",
+          fontSize: "30px",
+          backgroundColor: "orange",
+          borderRadius: "50%",
+          padding: "10px",
+          cursor: "pointer",
+          zIndex: "40",
+        }}
+        onClick={() => {
+          setModalOpen(false);
+        }}
+      >
+        <IoClose />
+      </span>
       <div
         className="contact-form-v1 "
         style={{
@@ -22,6 +41,7 @@ function Contact({ setModalOpen }) {
           marginTop: "50px",
           width: "90%",
           margin: "auto",
+          position: "relative",
         }}
       >
         <h3 className="fs-40 mb-30 mt-n2 text-white">Contact With Us</h3>
@@ -68,24 +88,6 @@ function Contact({ setModalOpen }) {
                 <option value="UI/UX Designing">UI/UX Designing</option>
                 <option value="Photography">Photography</option>
               </select>
-              <span
-                style={{
-                  color: "white",
-                  position: "absolute",
-                  top: "-230px",
-                  left: "640px",
-                  fontSize: "30px",
-                  backgroundColor: "orange",
-                  borderRadius: "50%",
-                  padding: "10px",
-                  cursor: "pointer",
-                }}
-                onClick={() => {
-                  setModalOpen(false);
-                }}
-              >
-                <IoClose />
-              </span>
             </div>
             <div className="form-group col-12 style-border">
               <textarea
@@ -97,7 +99,15 @@ function Contact({ setModalOpen }) {
                 placeholder="Your Message"
               ></textarea>
             </div>
-            <div className="form-btn col-12">
+            <div
+              className="form-btn col-12"
+              style={{
+                backgroundColor: "orange",
+                fontSize: "20px",
+                color: "white",
+                borderRadius: "10px",
+              }}
+            >
               <button className="th-btn w-100">Send Message</button>
             </div>
           </div>
