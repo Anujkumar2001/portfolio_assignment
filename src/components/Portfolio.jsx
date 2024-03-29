@@ -10,6 +10,7 @@ const Portfolio = ({ userData }) => {
   const [modalOpen, setModdalOpen] = useState(false);
   const [modalData, setModalData] = useState({});
   const [projectData, setProjectData] = useState(userData.projects);
+  const [inputVal, setInputVal] = useState("");
   const style = {
     position: "absolute",
     width: "100vw",
@@ -25,11 +26,11 @@ const Portfolio = ({ userData }) => {
     overflowY: "scroll",
   };
   const handleProjects = (e) => {
+    setInputVal(e.target.value);
     const techStackBag = [];
     const b = userData.projects.forEach((el) => {
       const c = el.techStack.forEach((tech) => {
-        const inputVal = e.target.value;
-        console.log(inputVal.toLowerCase());
+        const inputVal = e.target.value.toLowerCase();
         if (tech.toLowerCase().includes(inputVal)) {
           techStackBag.push(el);
         }
@@ -75,6 +76,7 @@ const Portfolio = ({ userData }) => {
                     onChange={(e) => {
                       handleProjects(e);
                     }}
+                    value={inputVal}
                   />
                   <IoMdSearch />
                 </span>
